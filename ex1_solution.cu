@@ -6,6 +6,10 @@
 #define BLOCK_SIZE 256
 #define ARRAY_SIZE 16777216
 
+double getMillis(time_t t1, time_t t2) {
+    return (double)(t2 - t1) * 1000.0L;
+}
+
 float sum(int n, float *f) {
     float res = 0.0f;
     for(int i = 0; i < n; i++) {
@@ -27,10 +31,6 @@ __global__ void gpu_saxpy(int n, float a, float *x, float *y) {
     for (int i = idx; i < n; i += stride) {
         y[i] = a * x[i] + y[i];
     }
-}
-
-double getMillis(time_t t1, time_t t2) {
-    return (double)(t2 - t1) * 1000.0L;
 }
 
 int main() {
