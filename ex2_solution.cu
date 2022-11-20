@@ -32,12 +32,6 @@ typedef struct {
     unsigned int blue;
 } RGB;
 
-/*typedef struct {
-    RGB *image;
-    unsigned int width;
-    unsigned int height;
-} Image;*/
-
 __global__ void drawMandelbrot(RGB *rgb, double *cr, double *ci) {
     int row = blockIdx.y * blockDim.y + threadIdx.y;
     int col = blockIdx.x * blockDim.x + threadIdx.x;
