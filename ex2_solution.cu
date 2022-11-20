@@ -162,5 +162,9 @@ int main(int argc, char** argv) {
 
     printf("Writing image to disk took %.2fms\n", getMillis(t5, t6));
 
+    free(image);
+    free(cr);
+    free(ci);
+	
     return 0;
 }
