@@ -83,9 +83,6 @@ int main(int argc, char** argv) {
 
     time_t t1 = clock();
 
-    //Image image;
-    //image.height = HEIGHT;
-    //image.width = WIDTH;
     RGB *image = (RGB*) malloc(sizeof(RGB) * HEIGHT * WIDTH);
 
     double minR = -2.0;
